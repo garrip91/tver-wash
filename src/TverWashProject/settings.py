@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
+from . import Yandex_config
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -54,7 +58,7 @@ ROOT_URLCONF = 'TverWashProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -103,9 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -115,9 +119,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+# ДЛЯ РАЗРАБОТКИ:
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+# # ДЛЯ ХОСТИНГА:
+# STATIC_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+EMAIL_BACKEND = Yandex_config.EMAIL_BACKEND
+EMAIL_HOST = Yandex_config.EMAIL_HOST
+EMAIL_PORT = Yandex_config.EMAIL_PORT
+EMAIL_HOST_USER = Yandex_config.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = Yandex_config.EMAIL_HOST_PASSWORD
+EMAIL_USE_TLS = Yandex_config.EMAIL_USE_TLS
+EMAIL_USE_SSL = Yandex_config.EMAIL_USE_SSL
