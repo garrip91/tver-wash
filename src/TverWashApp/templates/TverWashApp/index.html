@@ -74,7 +74,7 @@
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
                       <li><a href="{% url 'services' %}">Услуги</a></li>
-                      <li><a href="#">О нас</a></li>
+                      <li><a href="{% url 'about_us' %}">О нас</a></li>
                       <li><a href="{% url 'gallery' %}">Галлерея</a></li>
                       <li><a data-toggle="modal" data-target="#modalsignup" href="">Записаться</a></li>
                     </ul>
@@ -278,7 +278,7 @@
                 <li><a class="link link-footer" href="{% url 'services' %}">Услуги</a></li>
                 <li><a class="link link-footer" href="{% url 'gallery' %}">Галлерея</a></li>
                 <li><a class="link link-footer" data-toggle="modal" data-target="#modalsignup" href=""">Записаться</a></li>
-                <li><a class="link link-footer" href="services.html">О нас</a></li>
+                <li><a class="link link-footer" href="{% url 'about_us' %}">О нас</a></li>
               </ul>
             </div>
             <div class="cell-sm-6 cell-lg-3">

@@ -6,7 +6,6 @@ from .models import *
 
 class HomePageView(View):
     def get(self, request, *args, **kwargs):
-        #user_form = UserForm()
         return render(request, 'TverWashApp/index.html', context={})
 
     def post(self, request, *args, **kwargs):
@@ -22,3 +21,8 @@ class Gallery(ListView):
     queryset = Gallery.objects.all()
     context_object_name = 'photos'
     template_name = "TverWashApp/gallery.html"
+
+
+class About_Us(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'TverWashApp/about-us.html', context={})

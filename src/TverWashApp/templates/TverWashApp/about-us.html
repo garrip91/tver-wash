@@ -1,0 +1,56 @@
+{% extends 'TverWashApp/index.html' %}
+{% load static %}
+{% block title %}
+  О нас
+{% endblock title %}
+{% block content %}
+      <hr>
+      <section class="section-md bg-white">
+        <div class="shell">
+          <h3>О нас</h3>
+          <div class="range range-xs-center text-sm-left range-50">
+            <div class="cell-sm-5">
+              <h6>Наша история</h6>
+              <p>История</p>
+            </div>
+            <div class="cell-sm-7"><img src="{% static 'img/about.7ab1d77.png' %}" alt="" width="670" height="242"/>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-md bg-white">
+        <div class="shell">
+          <h3>Наша команда</h3>
+          <div class="range range-xs-center range-45">
+            <div class="cell-sm-6 cell-md-3">
+              <div class="thumbnail-variant-2"><img src="{% static 'img/user.svg' %}" alt="" width="270" height="187"/>
+                <div class="caption">
+                  <h6><a class="link link-black" href="#">Иван Иванов</a></h6><span class="subtitle-thumnbail">Должность</span><a class="link link-black" href="callto:#">Тел: 8 920-000-00-00</a>
+                </div>
+              </div>
+            </div>
+            <div class="cell-sm-6 cell-md-3">
+              <div class="thumbnail-variant-2"><img src="{% static 'img/user.svg' %}" alt="" width="270" height="187"/>
+                <div class="caption">
+                  <h6><a class="link link-black" href="#">Иван Иванов</a></h6><span class="subtitle-thumnbail">Должность</span><a class="link link-black" href="callto:#">Тел: 8 920-000-00-00</a>
+                </div>
+              </div>
+            </div>
+            <div class="cell-sm-6 cell-md-3">
+              <div class="thumbnail-variant-2"><img src="{% static 'img/user.svg' %}" alt="" width="270" height="187"/>
+                <div class="caption">
+                  <h6><a class="link link-black" href="#">Иван Иванов</a></h6><span class="subtitle-thumnbail">Должность</span><a class="link link-black" href="callto:#">Тел: 8 920-000-00-00</a>
+                </div>
+              </div>
+            </div>
+            <div class="cell-sm-6 cell-md-3">
+              <div class="thumbnail-variant-2"><img src="{% static 'img/user.svg' %}" alt="" width="270" height="187"/>
+                <div class="caption">
+                  <h6><a class="link link-black" href="#">Иван Иванов</a></h6><span class="subtitle-thumnbail">Должность</span><a class="link link-black" href="callto:#">Тел: 8 920-000-00-00</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {% endblock content %}
