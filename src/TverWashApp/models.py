@@ -1,5 +1,13 @@
 from django.db import models
 
+"""
+Модель Services для страницы услуг(services.html)
+Модель Gallery для страницы галереи работ(gellery.html)
+Модель Team для описания участников организации, присутвует на главной странице(index.html) и на на странице о нас(about-us.html)
+Модель Call_Back для формы модального окна для заказа звонка клиенту
+Модель Sign_Up для формы модального окна для записи на консультацию
+"""
+
 
 class Services(models.Model):
     image = models.ImageField(verbose_name='Фото', upload_to='TverWashApp/static/img/', null=False)
@@ -23,6 +31,7 @@ class Team(models.Model):
     image = models.ImageField(verbose_name='Фото', upload_to='TverWashApp/static/img/')
     name = models.CharField(max_length=30, verbose_name='Имя')
     about = models.TextField(max_length=1000, verbose_name='Краткая история')
+    number = models.IntegerField(verbose_name='Телефон', null=True)
 
     class Meta:
         verbose_name = 'Команда'

@@ -22,35 +22,16 @@
         <div class="shell">
           <h3>Наша команда</h3>
           <div class="range range-xs-center range-45">
+            {% for photo_team in team %}
             <div class="cell-sm-6 cell-md-3">
-              <div class="thumbnail-variant-2"><img src="{% static 'img/user.svg' %}" alt="" width="270" height="187"/>
+              <div class="thumbnail-variant-2"><img src="{{ photo_team.image.url }}" alt="" width="270" height="187"/>
                 <div class="caption">
-                  <h6><a class="link link-black" href="#">Иван Иванов</a></h6><span class="subtitle-thumnbail">Должность</span><a class="link link-black" href="callto:#">Тел: 8 920-000-00-00</a>
+                  <h6><a class="link link-black" href="#">{{ photo_team.name }}</a></h6><span class="subtitle-thumnbail">{{ photo_team.about }}</span><a class="link link-black" href="callto:#">Тел: {{ photo_team.number }}</a>
                 </div>
               </div>
             </div>
-            <div class="cell-sm-6 cell-md-3">
-              <div class="thumbnail-variant-2"><img src="{% static 'img/user.svg' %}" alt="" width="270" height="187"/>
-                <div class="caption">
-                  <h6><a class="link link-black" href="#">Иван Иванов</a></h6><span class="subtitle-thumnbail">Должность</span><a class="link link-black" href="callto:#">Тел: 8 920-000-00-00</a>
-                </div>
-              </div>
-            </div>
-            <div class="cell-sm-6 cell-md-3">
-              <div class="thumbnail-variant-2"><img src="{% static 'img/user.svg' %}" alt="" width="270" height="187"/>
-                <div class="caption">
-                  <h6><a class="link link-black" href="#">Иван Иванов</a></h6><span class="subtitle-thumnbail">Должность</span><a class="link link-black" href="callto:#">Тел: 8 920-000-00-00</a>
-                </div>
-              </div>
-            </div>
-            <div class="cell-sm-6 cell-md-3">
-              <div class="thumbnail-variant-2"><img src="{% static 'img/user.svg' %}" alt="" width="270" height="187"/>
-                <div class="caption">
-                  <h6><a class="link link-black" href="#">Иван Иванов</a></h6><span class="subtitle-thumnbail">Должность</span><a class="link link-black" href="callto:#">Тел: 8 920-000-00-00</a>
-                </div>
-              </div>
-            </div>
-          </div>
+            {% endfor %}
+        </div>
         </div>
       </section>
       {% endblock content %}
