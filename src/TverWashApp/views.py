@@ -2,8 +2,6 @@ from django.shortcuts import render
 
 from django.views import View
 from django.views.generic.list import ListView
-import os
-from pathlib import Path
 from .models import *
 
 class HomePageView(View):
@@ -18,3 +16,9 @@ class All_Servises(ListView):
     queryset = Services.objects.all()
     context_object_name = 'services'
     template_name = "TverWashApp/services.html"
+
+
+class Gallery(ListView):
+    queryset = Gallery.objects.all()
+    context_object_name = 'photos'
+    template_name = "TverWashApp/gallery.html"

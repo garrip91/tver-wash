@@ -12,6 +12,8 @@ urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('services/', All_Servises.as_view(), name='services'),
+    path('gallery/', Gallery.as_view(), name='gallery'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # if settings.DEBUG:

@@ -70,22 +70,13 @@
                 <div class="rd-navbar-nav-wrap">
                   <div class="rd-navbar-nav-scroll-holder">
                     <!-- RD Navbar Brand-->
-                    <div class="rd-navbar-mobile-brand"><a class="brand-name" href="{% url 'home' %}"><img src="images/brand.png" width="180" height="33" alt=""></a></div>
+                    <div class="rd-navbar-mobile-brand"><a class="brand-name" href="{% url 'home' %}"><img src="{% static 'img/business-card.png'%}" width="180" height="33" alt=""></a></div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li><a href="services.html">Услуги</a>
-                        <!-- RD Navbar Dropdown-->
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="#">1-услуга</a></li>
-                          <li><a href="#">2-услуга</a></li>
-                          <li><a href="#">3-услуга</a></li>
-                          <li><a href="#">4-услуга</a></li>
-                          <li><a href="#">5-услуга</a></li>
-                        </ul>
-                      </li>
+                      <li><a href="{% url 'services' %}">Услуги</a></li>
                       <li><a href="#">О нас</a></li>
-                      <li><a href="#">Галлерея</a></li>
-                      <li><a data-toggle="modal" data-target="#modalsignup" href=""">Записаться</a></li>
+                      <li><a href="{% url 'gallery' %}">Галлерея</a></li>
+                      <li><a data-toggle="modal" data-target="#modalsignup" href="">Записаться</a></li>
                     </ul>
                   </div>
                 </div>
@@ -284,10 +275,10 @@
               <h6>Быстрые ссылки</h6>
               <hr class="divider divider-xs">
               <ul class="list list-unstyled list-2-col">
-                <li><a class="link link-footer" href="services.html">Услуги</a></li>
-                <li><a class="link link-footer" href="gallery.html">Галлерея</a></li>
-                <li><a class="link link-footer" href="contacts.html">Записаться</a></li>
-                <li><a class="link link-footer" href="services.html">Цены</a></li>
+                <li><a class="link link-footer" href="{% url 'services' %}">Услуги</a></li>
+                <li><a class="link link-footer" href="{% url 'gallery' %}">Галлерея</a></li>
+                <li><a class="link link-footer" data-toggle="modal" data-target="#modalsignup" href=""">Записаться</a></li>
+                <li><a class="link link-footer" href="services.html">О нас</a></li>
               </ul>
             </div>
             <div class="cell-sm-6 cell-lg-3">
