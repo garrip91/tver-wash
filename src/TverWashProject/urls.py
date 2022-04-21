@@ -6,7 +6,9 @@ from TverWashApp.views import *
 from django.conf.urls.static import static
 from django.conf import settings
 
-
+"""
+Добавил urls для 4 страниц.
+"""
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
