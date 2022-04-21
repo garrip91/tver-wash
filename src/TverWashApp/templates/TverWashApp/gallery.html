@@ -4,6 +4,8 @@
   Галерея
 {% endblock title %}
 {% block content %}
+<!--Подгружаем основную страницу-->
+<!--Секция галереи работ-->
 <div class="row">
   {% for photo in photos %}
   <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
@@ -12,7 +14,6 @@
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Boat on Calm Water"
     />
-
   </div>
     {% endfor %}
 </div>
