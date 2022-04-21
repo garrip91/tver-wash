@@ -1,4 +1,4 @@
-# tver-wash
+# tver-wash-landing
 1. Оставил комментарии в следующих файлах:
 - urls.py
 - views.py
