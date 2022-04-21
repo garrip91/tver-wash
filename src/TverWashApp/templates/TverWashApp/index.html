@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
-  
+  <!--Блок хедера и навбара-->
   <body>
     <!-- Page-->
     <div class="page text-center">
@@ -85,7 +85,9 @@
           </nav>
         </div>
       </header>
+      <!--Основной блок-->
       {% block content %}
+      <!--Секция основной картинки и названия компании-->
       <section class="banner bg-image-1 text-sm-left section-banner">
         <div class="shell">
           <div class="range range-xs-center range-md-right">
@@ -97,6 +99,7 @@
           </div>
         </div>
       </section>
+      <!--Секция информации о работе и обратной связи-->
       <section class="text-sm-left contact-info">
         <div class="shell">
           <div class="range range-xs-center border-left-cell">
@@ -138,6 +141,7 @@
           </div>
         </div>
       </section>
+      <!--Секция основных услуг-->
       <section class="section-md">
         <div class="shell">
           <h3>Ремонтируем бытовую технику любой сложности</h3>
@@ -147,32 +151,32 @@
               <div class="range range-55">
                 <div class="cell-sm-6 cell-md-4">
                   <div class="thumbnail-variant-1"><span class="icon icon-circle icon-lg icon-primary car-repire-icon-46"></span>
-                    <div class="caption"><a class="link link-default title-thumbnail" href="index.html#">Ремонт стиральной машины</a></div>
+                    <div class="caption"><a class="link link-default title-thumbnail" href="#">Ремонт стиральной машины</a></div>
                   </div>
                 </div>
                 <div class="cell-sm-6 cell-md-4">
                   <div class="thumbnail-variant-1"><span class="icon icon-circle icon-lg icon-primary car-repire-icon-22"></span>
-                    <div class="caption"><a class="link link-default title-thumbnail" href="index.html#">Диагностика стиральной машины</a></div>
+                    <div class="caption"><a class="link link-default title-thumbnail" href="#">Диагностика стиральной машины</a></div>
                   </div>
                 </div>
                 <div class="cell-sm-6 cell-md-4">
                   <div class="thumbnail-variant-1"><span class="icon icon-circle icon-lg icon-primary car-repire-icon-31"></span>
-                    <div class="caption"><a class="link link-default title-thumbnail" href="index.html#">Обслуживание</a></div>
+                    <div class="caption"><a class="link link-default title-thumbnail" href="#">Обслуживание</a></div>
                   </div>
                 </div>
                 <div class="cell-sm-6 cell-md-4">
                   <div class="thumbnail-variant-1"><span class="icon icon-circle icon-lg icon-primary car-repire-icon-38"></span>
-                    <div class="caption"><a class="link link-default title-thumbnail" href="index.html#">Выезд на дом</a></div>
+                    <div class="caption"><a class="link link-default title-thumbnail" href="#">Выезд на дом</a></div>
                   </div>
                 </div>
                 <div class="cell-sm-6 cell-md-4">
                   <div class="thumbnail-variant-1"><span class="icon icon-circle icon-lg icon-primary car-repire-icon-06"></span>
-                    <div class="caption"><a class="link link-default title-thumbnail" href="index.html#">Ремонт посудомоечной машины</a></div>
+                    <div class="caption"><a class="link link-default title-thumbnail" href="#">Ремонт посудомоечной машины</a></div>
                   </div>
                 </div>
                 <div class="cell-sm-6 cell-md-4">
                   <div class="thumbnail-variant-1"><span class="icon icon-circle icon-lg icon-primary car-repire-icon-23"></span>
-                    <div class="caption"><a class="link link-default title-thumbnail" href="index.html#">Установка</a></div>
+                    <div class="caption"><a class="link link-default title-thumbnail" href="#">Установка</a></div>
                   </div>
                 </div>
               </div><a class="button button-sm button-default-outline" href="{% url 'services' %}">посмотреть все услуги</a>
@@ -182,14 +186,14 @@
           </div>
         </div>
       </section>
+      <!--Секция краткой информации-->
       <section class="bg-primary section-md">
-        <!--3470af-->
         <div class="shell">
           <h3>О нас</h3>
           <div class="range range-md-justify text-sm-left">
             <div class="cell-md-5">
               <h6>Мы работаем с 2008 года</h6>
-              <p>Здесь краткая информация.</p><a class="button button-sm button-default-outline" href="about-us.html">подробнее</a>
+              <p>Здесь краткая информация.</p><a class="button button-sm button-default-outline" href="{% url 'about_us' %}">подробнее</a>
             </div>
             <div class="cell-md-6">
               <!-- Owl Carousel-->
@@ -253,6 +257,7 @@
           </div>
         </div>
       </section>
+      <!--Секция футера-->
       <section class="offset-lg-top--360">
         {% endblock content %}
       <!-- Page Footer -->
@@ -312,9 +317,9 @@
         </div>
       </footer>
     </div>
-    <!-- Global Mailform Output-->
+    <!--Подписка mail рассылку-->
     <div class="snackbars" id="form-output-global"></div>
-    <!-- PhotoSwipe Gallery-->
+    <!--Блок для прокрутки галереи-->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="pswp__bg"></div>
       <div class="pswp__scroll-wrap">
@@ -349,7 +354,9 @@
         </div>
       </div>
     </div>
+    <!--Блок модальных окон-->
     <!--Modal Feedback-->
+    <!--Модальное окно для заказа звонка-->
     <div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -383,6 +390,7 @@
     </div>
   </div>
     <!--Modal Sign Up-->
+    <!--Модальное окно для записи-->
     <div class="modal fade" id="modalsignup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
