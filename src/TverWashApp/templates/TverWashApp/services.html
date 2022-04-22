@@ -1,27 +1,27 @@
 {% extends 'TverWashApp/index.html' %}
 {% load static %}
-{% block title %}
-  Все услуги
-{% endblock title %}
+{% block title %}Все услуги{% endblock title %}
+
 {% block content %}
-<!--Подгружаем основную страницу-->
-      <hr>
-      <!--Секция основных услуг-->
-      <section class="section-md bg-white">
+    <!--Подгружаем основную страницу-->
+    <hr />
+    <!--Секция основных услуг-->
+    <section class="section-md bg-white">
         <div class="shell">
-          <h3>Услуги нашей компании</h3>
-          <div class="range range-xs-center text-sm-left range-50">
-            {% for service in services %}
-            <div class="cell-sm-6 cell-md-4 cell-lg-3">
-              <div class="thumbnail-variant-4">
-                <img src="{{ service.image.url }}" alt="" width="270" height="200"/>
-                <div class="caption"><a class="link link-default title-thumbnail">{{ service.name }}</a>
-                  <p class="text-thumbnail">{{ service.about }}
-                  </p>
-                </div>
-              </div>
+            <h3>Услуги нашей компании</h3>
+            <div class="range range-xs-center text-sm-left range-50">
+                {% for service in services %}
+                    <div class="cell-sm-6 cell-md-4 cell-lg-3">
+                        <div class="thumbnail-variant-4">
+                            <img src="{{ service.image.url }}" alt="" width="270" height="200" />
+                            <div class="caption">
+                                <a class="link link-default title-thumbnail">{{ service.name }}</a>
+                                <p class="text-thumbnail">{{ service.about }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
-      </section>
-      {% endblock content %}
+    </section>
+{% endblock content %}
