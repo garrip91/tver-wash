@@ -1,40 +1,45 @@
 {% extends 'TverWashApp/index.html' %}
 {% load static %}
-{% block title %}
-  О нас
-{% endblock title %}
+{% block title %}О нас{% endblock title %}
+
 {% block content %}
-<!--Подгружаем основную страницу-->
-      <hr>
-      <!--Секция информации о компании-->
-      <section class="section-md bg-white">
+    <!--Подгружаем основную страницу-->
+    <hr>
+    <!--Секция информации о компании-->
+    <section class="section-md bg-white">
         <div class="shell">
-          <h3>О нас</h3>
-          <div class="range range-xs-center text-sm-left range-50">
-            <div class="cell-sm-5">
-              <h6>Наша история</h6>
-              <p>История</p>
-            </div>
-            <div class="cell-sm-7"><img src="{% static 'img/about.7ab1d77.png' %}" alt="" width="670" height="242"/>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--Секция информации о команде-->
-      <section class="section-md bg-white">
-        <div class="shell">
-          <h3>Наша команда</h3>
-          <div class="range range-xs-center range-45">
-            {% for photo_team in team %}
-            <div class="cell-sm-6 cell-md-3">
-              <div class="thumbnail-variant-2"><img src="{{ photo_team.image.url }}" alt="" width="270" height="187"/>
-                <div class="caption">
-                  <h6><a class="link link-black" href="#">{{ photo_team.name }}</a></h6><span class="subtitle-thumnbail">{{ photo_team.about }}</span><a class="link link-black" href="callto:#">Тел: {{ photo_team.number }}</a>
+            <h3>О нас</h3>
+            <div class="range range-xs-center text-sm-left range-50">
+                <div class="cell-sm-5">
+                    <h6>Наша история</h6>
+                    <p>История</p>
                 </div>
-              </div>
+                <div class="cell-sm-7">
+                    <img src="{% static 'img/about.7ab1d77.png' %}" alt="" width="670" height="242" />
+                </div>
             </div>
-            {% endfor %}
         </div>
+    </section>
+    <!--Секция информации о команде-->
+    <section class="section-md bg-white">
+        <div class="shell">
+            <h3>Наша команда</h3>
+            <div class="range range-xs-center range-45">
+                {% for photo_team in team %}
+                    <div class="cell-sm-6 cell-md-3">
+                        <div class="thumbnail-variant-2">
+                            <img src="{{ photo_team.image.url }}" alt="" width="270" height="187" />
+                            <div class="caption">
+                                <h6>
+                                    <a class="link link-black" href="#">{{ photo_team.name }}</a>
+                                </h6>
+                                <span class="subtitle-thumnbail">{{ photo_team.about }}</span>
+                                <a class="link link-black" href="callto:#">Тел: {{ photo_team.number }}</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-      </section>
-      {% endblock content %}
+    </section>
+{% endblock content %}
