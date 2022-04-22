@@ -21,7 +21,7 @@ class GalleryAdmin(admin.ModelAdmin):
     readonly_fields = ('get_image',)
 
 
-admin.site.register(Gallery)
+admin.site.register(Gallery, GalleryAdmin)
 # admin.site.register(Services)
 # admin.site.register(Team)
 # admin.site.register(Call_Back)
