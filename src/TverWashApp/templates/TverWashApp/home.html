@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+    <!--Секция основной картинки и названия компании-->
+    <section class="banner bg-image-1 text-sm-left section-banner">
+        <div class="shell">
+            <div class="range range-xs-center range-md-right">
+                <div class="cell-md-6 cell-lg-4">
+                    <h3>Сервис</h3>
+                    <h1>"Название сервиса"</h1>
+                    <a class="button button-sm button-default-outline" data-toggle="modal" data-target="#modalSubscriptionForm" href="">Заказать звонок</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Секция информации о работе и обратной связи-->
+    <section class="text-sm-left contact-info">
+        <div class="shell">
+            <div class="range range-xs-center border-left-cell">
+                <div class="cell-xs-8 cell-sm-4">
+                    <div class="contact-info-item">
+                        <h6>Наши преимущества</h6>
+                        <hr class="divider divider-xs" />
+                        <ul class="list list-marked">
+                            <li>Бесплатная диагностика</li>
+                            <li>Сертифицированные услуги</li>
+                            <li>Справедливые цены</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cell-xs-8 cell-sm-4">
+                    <div class="contact-info-item">
+                        <h6>часы работы</h6>
+                        <hr class="divider divider-xs" />
+                        <ul class="list list-2-col">
+                            <li>Будни:</li>
+                            <li>Суббота:</li>
+                            <li>Воскресенье:</li>
+                            <li>09:00 – 22:00</li>
+                            <li>10:00 – 18:00</li>
+                            <li>10:00 – 17:00</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cell-sm-4">
+                    <div class="contact-info-item">
+                        <h6>Свяжитесь с нами</h6>
+                        <hr class="divider divider-xs" />
+                        <a class="link link-sm link-primary" href="callto:#">8 800 8080 808</a>
+                        <div class="unit unit-horizontal unit-spacing-xxs unit-align-center unit-sm-align-left">
+                            <div class="unit-left">
+                                <span>whatsapp:</span>
+                            </div>
+                            <div class="unit-body">
+                                <a class="link link-gray-lightest" href="callto:#">8 800 8080 808</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Секция основных услуг-->
+    <section class="section-md">
+        <div class="shell">
+            <h3>Ремонтируем бытовую технику любой сложности</h3>
+            <p class="subtitle">МЫ ПОЧИНИМ ВАШУ ТЕХНИКУ БЫСТРО И КАЧЕСТВЕННО, <br class="visible-lg-inline-block"> А ТАКЖЕ РАССКАЖЕМ, КАК ИЗБЕЖАТЬ ПОЛОМОК.</p>
+            <div class="range range-xs-center">
+                <div class="cell-md-6">
+                    <div class="range range-55">
+                        <div class="cell-sm-6 cell-md-4">
+                            <div class="thumbnail-variant-1">
+                                <span class="icon icon-circle icon-lg icon-primary car-repire-icon-46"></span>
+                                <!-- <div class="caption">
+                                    <a class="link link-default title-thumbnail" href="#">Ремонт стиральной машины</a>
+                                </div> -->
+                                <div class="caption">
+                                    <b style="color:black">Ремонт стиральной машины</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell-sm-6 cell-md-4">
+                            <div class="thumbnail-variant-1">
+                                <span class="icon icon-circle icon-lg icon-primary car-repire-icon-22"></span>
+                                <!-- <div class="caption">
+                                    <a class="link link-default title-thumbnail" href="#">Диагностика стиральной машины</a>
+                                </div> -->
+                                <div class="caption">
+                                    <b style="color:black">Диагностика стиральной машины</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell-sm-6 cell-md-4">
+                            <div class="thumbnail-variant-1">
+                                <span class="icon icon-circle icon-lg icon-primary car-repire-icon-31"></span>
+                                <!-- <div class="caption">
+                                    <a class="link link-default title-thumbnail" href="#">Обслуживание</a>
+                                </div> -->
+                                <div class="caption">
+                                    <b style="color:black">Обслуживание</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell-sm-6 cell-md-4">
+                            <div class="thumbnail-variant-1">
+                                <span class="icon icon-circle icon-lg icon-primary car-repire-icon-38"></span>
+                                <!-- <div class="caption">
+                                    <a class="link link-default title-thumbnail" href="#">Выезд на дом</a>
+                                </div> -->
+                                <div class="caption">
+                                    <b style="color:black">Выезд на дом</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell-sm-6 cell-md-4">
+                            <div class="thumbnail-variant-1">
+                                <span class="icon icon-circle icon-lg icon-primary car-repire-icon-06"></span>
+                                <!-- <div class="caption">
+                                    <a class="link link-default title-thumbnail" href="#">Ремонт посудомоечной машины</a>
+                                </div> -->
+                                <div class="caption">
+                                    <b style="color:black">Ремонт посудомоечной машины</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell-sm-6 cell-md-4">
+                            <div class="thumbnail-variant-1">
+                                <span class="icon icon-circle icon-lg icon-primary car-repire-icon-23"></span>
+                                <!-- <div class="caption">
+                                    <a class="link link-default title-thumbnail" href="#">Установка</a>
+                                </div> -->
+                                <div class="caption">
+                                    <b style="color:black">Установка</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="button button-sm button-default-outline" href="{% url 'services' %}">посмотреть все услуги</a>
+                </div>
+                <div class="cell-md-6">
+                    <img src="{% static 'img/dishwasher.jpg' %}" alt="" width="588" height="448" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Секция краткой информации-->
+    <section class="bg-primary section-md">
+        <div class="shell">
+            <h3>О нас</h3>
+            <div class="range range-md-justify text-sm-left">
+                <div class="cell-md-5">
+                    <h6>Мы работаем с 2008 года</h6>
+                    <p>Здесь краткая информация.</p>
+                    <a class="button button-sm button-default-outline" href="{% url 'about_us' %}">подробнее</a>
+                </div>
+                <div class="cell-md-6">
+                    <!-- Owl Carousel-->
+                    <div class="owl-carousel" data-items="1" data-stage-padding="0" data-loop="false" data-margin="0" data-mouse-drag="false" data-nav="true">
+                        <div class="owl-item">
+                            <blockquote class="quote-variant-1">
+                                <div class="unit unit-horizontal unit-spacing-md unit-xs-middle">
+                                    <div class="unit-left">
+                                        <img class="img-circle" src="{% static 'img/user.svg' %}" alt="" width="108" height="108" />
+                                    </div>
+                                    <div class="unit-body">
+                                        <cite>Иван Иванов</cite>
+                                        <p>Генеральный директор</p>
+                                        <hr class="divider divider-xs" />
+                                    </div>
+                                </div>
+                                <div class="quote-body">
+                                    <p>
+                                        <q>Краткая история.</q>
+                                    </p>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="owl-item">
+                            <blockquote class="quote-variant-1">
+                                <div class="unit unit-horizontal unit-spacing-md unit-xs-middle">
+                                    <div class="unit-left">
+                                        <img class="img-circle" src="{% static 'img/user.svg' %}" alt="" width="108" height="108" />
+                                    </div>
+                                    <div class="unit-body">
+                                        <cite>Иван Иванов</cite>
+                                        <p>Мастер</p>
+                                        <hr class="divider divider-xs" />
+                                    </div>
+                                </div>
+                                <div class="quote-body">
+                                    <p>
+                                        <q>Краткая история.</q>
+                                    </p>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="owl-item">
+                            <blockquote class="quote-variant-1">
+                                <div class="unit unit-horizontal unit-spacing-md unit-xs-middle">
+                                    <div class="unit-left">
+                                        <img class="img-circle" src="{% static 'img/user.svg' %}" alt="" width="108" height="108" />
+                                    </div>
+                                    <div class="unit-body">
+                                        <cite>Иван Иванов</cite>
+                                        <p>Управляющий</p>
+                                        <hr class="divider divider-xs" />
+                                    </div>
+                                </div>
+                                <div class="quote-body">
+                                    <p>
+                                        <q>Краткая история.</q>
+                                    </p>
+                                </div>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Gallery, Services, Team, Call_Back, Sign_Up
+from .models import Gallery, Services, Team, Call_Request, Call_Appointment
 
 from django.utils.safestring import mark_safe
 
@@ -50,7 +50,7 @@ class TeamAdmin(admin.ModelAdmin):
 class CallBackAdmin(admin.ModelAdmin):
 
     class Meta:
-        model = Call_Back
+        model = Call_Request
 
     list_display = ('name', 'phone', 'id')
 
@@ -58,7 +58,7 @@ class CallBackAdmin(admin.ModelAdmin):
 class SignUpAdmin(admin.ModelAdmin):
 
     class Meta:
-        model = Sign_Up
+        model = Call_Appointment
 
     list_display = ('name', 'phone', 'address', 'wishes', 'id')
 
@@ -66,5 +66,5 @@ class SignUpAdmin(admin.ModelAdmin):
 admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(Services, ServicesAdmin)
 admin.site.register(Team, TeamAdmin)
-admin.site.register(Call_Back, CallBackAdmin)
-admin.site.register(Sign_Up, SignUpAdmin)
+admin.site.register(Call_Request, CallBackAdmin)
+admin.site.register(Call_Appointment, SignUpAdmin)

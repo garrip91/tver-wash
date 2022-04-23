@@ -12,7 +12,7 @@ from django.db import models
 class Services(models.Model):
 
     name = models.CharField(max_length=30, verbose_name='Название услуги')
-    image = models.ImageField(verbose_name='Фото', upload_to='TverWashApp/static/img/', null=False)
+    image = models.ImageField(verbose_name='Фото', upload_to='media/img/', null=False)
     about = models.TextField(max_length=1000, verbose_name='Описание')
 
     def __str__(self):
@@ -26,7 +26,7 @@ class Services(models.Model):
 
 class Gallery(models.Model):
 
-    image = models.ImageField(verbose_name='Фото для галереи', upload_to='TverWashApp/static/img/', null=False)
+    image = models.ImageField(verbose_name='Фото для галереи', upload_to='media/img/', null=False)
 
     def __str__(self):
         return str(self.id)
@@ -40,7 +40,7 @@ class Gallery(models.Model):
 class Team(models.Model):
 
     name = models.CharField(max_length=30, verbose_name='Имя')
-    image = models.ImageField(verbose_name='Фото', upload_to='TverWashApp/static/img/')
+    image = models.ImageField(verbose_name='Фото', upload_to='media/img/')
     about = models.TextField(max_length=1000, verbose_name='Краткая история')
     #number = models.IntegerField(verbose_name='Телефон', null=True)
     phone = models.CharField(max_length=18, verbose_name='Телефон', blank=True, null=True)
@@ -54,7 +54,7 @@ class Team(models.Model):
         ordering = ['id']
 
 
-class Call_Back(models.Model):
+class Call_Request(models.Model):
 
     name = models.CharField(max_length=30, verbose_name='Имя')
     #number = models.IntegerField(verbose_name='Телефон')
@@ -69,7 +69,7 @@ class Call_Back(models.Model):
         ordering = ['id']
 
 
-class Sign_Up(models.Model):
+class Call_Appointment(models.Model):
 
     name = models.CharField(max_length=30, verbose_name='Имя')
     #number = models.IntegerField(verbose_name='Телефон')

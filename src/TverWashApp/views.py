@@ -27,10 +27,10 @@ template_name - это html страница, которую мы обрабат
 
 class HomePageView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'TverWashApp/index.html', context={})
+        return render(request, 'TverWashApp/home.html', context={})
 
     def post(self, request, *args, **kwargs):
-        return render(request, 'TverWashApp/index.html', context={})
+        return render(request, 'TverWashApp/home.html', context={})
 
 
 class All_Servises(ListView):

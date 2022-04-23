@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 
-#from . import Yandex_config
+from . import Yandex_config
 
 
 
@@ -49,7 +49,7 @@ ROOT_URLCONF = 'TverWashProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
