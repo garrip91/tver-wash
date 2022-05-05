@@ -14,24 +14,24 @@ class MyFormMixin1(View):
         #################### РЕАЛИЗУЕМ ПОЛУЧЕНИЕ ЗАЯВКИ ОТ ПОЛЬЗОВАТЕЛЯ: ####################
         if request.method == 'POST' and 'feedback1' in request.POST:
             call_request_form = CallRequestForm(request.POST)
-            print(call_request_form)
+            #print(call_request_form)
+            print(call_request_form.is_valid())
             if call_request_form.is_valid():
                 CallRequestForm_name = call_request_form.cleaned_data.get('name')
                 #print(CallRequestForm_name)
                 CallRequestForm_phone = call_request_form.cleaned_data.get('phone')
                 #print(CallRequestForm_phone)
-                try:
-                    send_mail(F'Вам поступила заявка от ***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >>', F'***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >> отправил Вам заявку на консультацию!', 'sarkis.bazayan@yandex.ru', ['garrip91@mail.ru'], fail_silently=False)
-                    # send_mail(F'Вам поступила заявка от ***[[ {Feedback_name} ]]*** с абонентским номером << {Feedback_phone} >>', F'***[[ {Feedback_name} ]]*** с абонентским номером << {Feedback_phone} >> отправил (-а) Вам заявку на консультацию!', 'avitadentedgar@yandex.ru', ['avitadentedgar@yandex.ru'], fail_silently=False)
-                    # print(send_mail)
-                except:
-                    return HttpResponseNotFound('<h1>Письмо не отправлено</h1>')
-                else:
-                    print("ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
-                    messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
-                    call_request_form.save()
-                    #return HttpResponseRedirect(self.request.path)
-                    return HttpResponseRedirect(F'{self.request.path}#thanks')
+#                try:
+                send_mail(F'Вам поступила заявка от ***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >>', F'***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >> отправил Вам заявку на консультацию!', 'sarkis.bazayan@yandex.ru', ['garrip91@mail.ru'], fail_silently=False)
+                print(send_mail)
+#                except:
+#                    return HttpResponseNotFound('<h1>Письмо не отправлено</h1>')
+#                else:
+                print("ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
+                messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
+                call_request_form.save()
+                #return HttpResponseRedirect(self.request.path)
+                return HttpResponseRedirect(F'{self.request.path}#thanks')
             else:
                 print("ЧТО-ТО ПОШЛО НЕ ТАК!")
                 messages.error(request, 'НЕПРАВИЛЬНО ВВЕДЁН НОМЕР ТЕЛЕФОНА!')
