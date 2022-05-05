@@ -5,7 +5,7 @@ from .models import Call_Request, Call_Appointment
 
 
 class CallRequestForm(forms.ModelForm):
-    
+
     class Meta:
         model = Call_Request
         fields = ['name', 'phone']
@@ -14,7 +14,7 @@ class CallRequestForm(forms.ModelForm):
 
 
 class CallAppointmentForm(forms.ModelForm):
-    
+
     class Meta:
         model = Call_Appointment
         fields = ['name', 'phone', 'address', 'wishes']
