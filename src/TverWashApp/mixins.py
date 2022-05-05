@@ -4,7 +4,7 @@ from .forms import CallRequestForm, CallAppointmentForm
 #from django.contrib import messages
 #from django.http import HttpResponseRedirect
 
-#from django.core.mail import send_mail
+from django.core.mail import send_mail
 #from django.http import HttpResponseNotFound
 
 
@@ -13,23 +13,23 @@ class MyFormMixin1(View):
     def dispatch(self, request, *args, **kwargs):
         #################### РЕАЛИЗУЕМ ПОЛУЧЕНИЕ ЗАЯВКИ ОТ ПОЛЬЗОВАТЕЛЯ: ####################
         if request.method == 'POST' and 'feedback1' in request.POST:
-            feedback_form = FeedbackForm(request.POST)
-            # print(feedback_form)
-            if feedback_form.is_valid():
-                Feedback_name = feedback_form.cleaned_data.get('Feedback_name')
-                print(Feedback_name)
-                Feedback_phone = feedback_form.cleaned_data.get('Feedback_phone')
-                print(Feedback_phone)
+            call_request_form = CallRequestForm(request.POST)
+            # print(call_request_form)
+            if call_request_form.is_valid():
+                CallRequestForm_name = call_request_form.cleaned_data.get('name')
+                # print(CallRequestForm_name)
+                CallRequestForm_phone = call_request_form.cleaned_data.get('phone')
+                # print(CallRequestForm_phone)
                 try:
-                    # send_mail(F'Вам поступила заявка от ***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >>', F'***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >> отправил Вам заявку на консультацию!', 'avitadentedgar@yandex.ru', ['garrip91@mail.ru'], fail_silently=False)
-                    send_mail(F'Вам поступила заявка от ***[[ {Feedback_name} ]]*** с абонентским номером << {Feedback_phone} >>', F'***[[ {Feedback_name} ]]*** с абонентским номером << {Feedback_phone} >> отправил (-а) Вам заявку на консультацию!', 'avitadentedgar@yandex.ru', ['avitadentedgar@yandex.ru'], fail_silently=False)
-                    print(send_mail)
+                    send_mail(F'Вам поступила заявка от ***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >>', F'***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >> отправил Вам заявку на консультацию!', 'avitadentedgar@yandex.ru', ['garrip91@mail.ru'], fail_silently=False)
+                    # send_mail(F'Вам поступила заявка от ***[[ {Feedback_name} ]]*** с абонентским номером << {Feedback_phone} >>', F'***[[ {Feedback_name} ]]*** с абонентским номером << {Feedback_phone} >> отправил (-а) Вам заявку на консультацию!', 'avitadentedgar@yandex.ru', ['avitadentedgar@yandex.ru'], fail_silently=False)
+                    # print(send_mail)
                 except:
                     return HttpResponseNotFound('<h1>Письмо не отправлено</h1>')
                 else:
                     print("ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
                     messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
-                    feedback_form.save()
+                    call_request_form.save()
                     #return HttpResponseRedirect(self.request.path)
                     return HttpResponseRedirect(F'{self.request.path}#thanks')
             else:
@@ -38,7 +38,7 @@ class MyFormMixin1(View):
                 #return HttpResponseRedirect(self.request.META.get('HTTP_REFERER'))
                 return HttpResponseRedirect(self.request.path)
         else:
-            self.feedback_form = FeedbackForm()
+            self.call_request_form = FeedbackForm()
         #####################################################################################
         # print(F'request.path == {request.path}')
         return super().dispatch(request, *args, **kwargs)
