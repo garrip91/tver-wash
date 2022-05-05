@@ -1,45 +1,24 @@
 from django import forms
 
-#from KinomonsterApp.models import Film, Series, FilmComments, SeriesComments, SendMessage
-from .models import Feedback, Appointment
-
-#from django.contrib.auth import get_user_model, authenticate
-#from django.contrib.auth.hashers import check_password
-
-#from django.contrib.auth.models import User
-
-#from django.contrib.auth.forms import UserCreationForm
-
-#from django.core.mail import send_mail
-
-from phonenumber_field.formfields import PhoneNumberField
-from phonenumber_field.widgets import PhoneNumberPrefixWidget
+from .models import Call_Request, Call_Appointment
 
 
 
-class FeedbackForm(forms.ModelForm):
+class CallRequestForm(forms.ModelForm):
     
     class Meta:
-        model = Feedback
-        fields = ['Feedback_name', 'Feedback_phone']
-        Feedback_name = forms.CharField(required=True)
-        Feedback_phone = forms.CharField(required=True)
+        model = Call_Request
+        fields = ['name', 'phone']
+        name = forms.CharField(required=True)
+        phone = forms.CharField(required=True)
 
 
-class AppointmentForm(forms.ModelForm):
+class CallAppointmentForm(forms.ModelForm):
     
     class Meta:
-        model = Appointment
-        fields = ['Appointment_name', 'Appointment_phone', 'Appointment_email']
-        Appointment_name = forms.CharField(required=True)
-        Appointment_phone = forms.CharField(required=True)
-        Appointment_email = forms.EmailField(required=True)
-
-
-class FooterFeedbackForm(forms.ModelForm):
-    
-    class Meta:
-        model = Feedback
-        fields = ['Feedback_name', 'Feedback_phone']
-        FooterFeedback_name = forms.CharField(required=True)
-        FooterFeedback_phone = forms.CharField(required=True)
+        model = Call_Appointment
+        fields = ['name', 'phone', 'address', 'wishes']
+        name = forms.CharField(required=True)
+        phone = forms.CharField(required=True)
+        address = forms.CharField(required=True)
+        wishes = forms.CharField(required=False)
