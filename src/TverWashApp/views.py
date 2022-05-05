@@ -29,7 +29,7 @@ template_name - это html страница, которую мы обрабат
 
 
 
-class HomePageView(View, MyFormMixin1):
+class HomePageView(MyFormMixin1, View):
 
     form_class1 = CallRequestForm
     form_class2 = CallAppointmentForm

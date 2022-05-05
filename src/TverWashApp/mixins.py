@@ -38,7 +38,7 @@ class MyFormMixin1(View):
                 #return HttpResponseRedirect(self.request.META.get('HTTP_REFERER'))
                 return HttpResponseRedirect(self.request.path)
         else:
-            self.call_request_form = FeedbackForm()
+            self.call_request_form = CallRequestForm()
         #####################################################################################
         # print(F'request.path == {request.path}')
         return super().dispatch(request, *args, **kwargs)
