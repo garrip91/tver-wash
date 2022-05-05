@@ -1,7 +1,11 @@
+{% load static %}
+{% load widget_tweaks %}
+
+
+
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="ru">
     <head>
-        {% load static %}
         <title>{% block title %}{% endblock title %}</title>
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -270,7 +274,7 @@
                             </div>
                         </div>
                         <div class="modal-footer d-flex justify-content-center">
-                            <button class="button button-sm button-default-outline">Заказать <i class="fas fa-paper-plane-o ml-1"></i></button>
+                            <button class="button button-sm button-default-outline" name="feedback1">Заказать <i class="fas fa-paper-plane-o ml-1"></i></button>
                         </div>
                     </form>
                 </div>
@@ -309,7 +313,7 @@
                             </div>
                         </div>
                         <div class="modal-footer d-flex justify-content-center">
-                            <button class="button button-sm button-default-outline">Заказать <i class="fas fa-paper-plane-o ml-1"></i></button>
+                            <button class="button button-sm button-default-outline" name="feedback2">Заказать <i class="fas fa-paper-plane-o ml-1"></i></button>
                         </div>
                     </form>
                 </div>
