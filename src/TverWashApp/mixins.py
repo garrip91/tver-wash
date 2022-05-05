@@ -1,11 +1,11 @@
 from django.views.generic import View
 from .models import Call_Request, Call_Appointment
 from .forms import CallRequestForm, CallAppointmentForm
-#from django.contrib import messages
-#from django.http import HttpResponseRedirect
+from django.contrib import messages
+from django.http import HttpResponseRedirect
 
 from django.core.mail import send_mail
-#from django.http import HttpResponseNotFound
+from django.http import HttpResponseNotFound
 
 
 class MyFormMixin1(View):
