@@ -36,10 +36,12 @@ class HomePageView(MyFormMixin1, View):
 
     def get(self, request, *args, **kwargs):
         form1 = self.form_class1(request.POST)
+        print(form1)
         form2 = self.form_class2(request.POST)
         return render(request, 'TverWashApp/home.html', context={'form1': form1, 'form2': form2})
     def post(self, request, *args, **kwargs):
         form1 = self.form_class1(request.POST)
+        print(form1)
         form2 = self.form_class2(request.POST)
         return render(request, 'TverWashApp/home.html', context={'form1': form1, 'form2': form2})
 

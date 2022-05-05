@@ -264,12 +264,14 @@
                             <div class="md-form mb-5">
                                 <i class="fas fa-user prefix"></i>
                                 <!--id="form3"-->
-                                <input type="text" class="form-control validate" id="form3" />
+                                <!-- <input type="text" class="form-control validate" id="form3" /> -->
+                                {% render_field form1.name type="text", class="form-control validate", id="form3" placeholder="Введите Ваше имя" %}
                                 <label data-error="wrong" data-success="right" for="form3">Ваше имя</label>
                             </div>
                             <div class="md-form mb-4">
                                 <i class="fas fa-phone prefix"></i>
-                                <input type="tel" id="form2_1" class="form-control validate" />
+                                <!-- <input type="tel" id="form2_1" class="form-control validate" /> -->
+                                {% render_field form1.phone type="tel", id="form2_1", class="form-control validate" %}
                                 <label data-error="wrong" data-success="right" for="form2_1">Ваш телефон</label>
                             </div>
                         </div>
