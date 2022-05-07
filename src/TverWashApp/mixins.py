@@ -23,7 +23,7 @@ class MyFormMixin1(View):
                 #print(CallRequestForm_phone)
                 try:
                 # send_mail(F'Вам поступила заявка от ***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >>', F'***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >> отправил Вам заявку на консультацию!', 'sarkis.bazayan@yandex.ru', ['sarkis.bazayan@yandex.ru'], fail_silently=False)
-                    send_mail(F'Вам поступил заказ звонка от ***[[ {CallRequestForm_name} ]]*** с абонентским номером << {CallRequestForm_phone} >>', F'***[[ {CallRequestForm_name} ]]*** с абонентским номером << {CallRequestForm_phone} >> заказал(-а) звонок от Вас!', 'sarkis.bazayan@yandex.ru', ['sarkis.bazayan@yandex.ru'], fail_silently=False)
+                    send_mail(F'Вам поступил заказ звонка от ***[[ {CallRequestForm_name} ]]*** с абонентским номером << {CallRequestForm_phone} >>', F'[name] {CallRequestForm_name} [/name] с абонентским номером [phone] {CallRequestForm_phone} [/phone] заказал(-а) звонок от Вас!', 'sarkis.bazayan@yandex.ru', ['sarkis.bazayan@yandex.ru'], fail_silently=False)
                     print(send_mail)
                 except:
                     return HttpResponseNotFound('<h1>Письмо не отправлено</h1>')

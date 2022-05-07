@@ -295,22 +295,26 @@
                         <div class="modal-body mx-3">
                             <div class="md-form mb-5">
                                 <i class="fas fa-user prefix"></i>
-                                <input type="text" id="form3" class="form-control validate" />
+                                <!-- <input type="text" id="form3" class="form-control validate" /> -->
+                                {% render_field form2.name type="text", id="form3", class="form-control validate" placeholder="Введите Ваше имя" %}
                                 <label data-error="wrong" data-success="right" for="form3">Ваше имя</label>
                             </div>
                             <div class="md-form mb-4">
                                 <i class="fas fa-phone prefix"></i>
-                                <input type="tel" id="form2_2" class="form-control validate" />
+                                <!-- <input type="tel" id="form2_2" class="form-control validate" /> -->
+                                {% render_field form2.phone type="tel", id="form2_2", class="form-control validate" placeholder="Введите Ваш номер телефона" %}
                                 <label data-error="wrong" data-success="right" for="form2_2">Ваш телефон</label>
                             </div>
                             <div class="md-form mb-4">
                                 <i class="fas fa-address-card prefix"></i>
-                                <input type="text" id="form5" class="form-control validate" />
+                                <!-- <input type="text" id="form5" class="form-control validate" /> -->
+                                {% render_field form2.address type="text", id="form5", class="form-control validate" placeholder="Введите Ваш адрес" %}
                                 <label data-error="wrong" data-success="right" for="form5">Ваш адрес</label>
                             </div>
                             <div class="md-form mb-4">
                                 <i class="fas fa-text-height prefix"></i>
-                                <input type="text" id="form4" class="form-control validate" />
+                                <!-- <input type="text" id="form4" class="form-control validate" /> -->
+                                {% render_field form2.wishes type="text", id="form4", class="form-control validate" placeholder="Введите Ваши пожелания" %}
                                 <label data-error="wrong" data-success="right" for="form4">Пожелания</label>
                             </div>
                         </div>
