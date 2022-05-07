@@ -5,7 +5,7 @@ from django.views.generic.list import ListView
 from .models import *
 
 from .forms import CallRequestForm, CallAppointmentForm
-from .mixins import MyFormMixin1
+from .mixins import MyFormMixin1, MyFormMixin2
 
 """
 HomePageView - класс основной страницы, имеет методы get и post для корректной работы форм 
@@ -29,7 +29,7 @@ template_name - это html страница, которую мы обрабат
 
 
 
-class HomePageView(MyFormMixin1, View):
+class HomePageView(MyFormMixin1, MyFormMixin2, View):
 
     form_class1 = CallRequestForm
     form_class2 = CallAppointmentForm
@@ -38,15 +38,17 @@ class HomePageView(MyFormMixin1, View):
         form1 = self.form_class1(request.POST)
         #print(form1)
         form2 = self.form_class2(request.POST)
+        print(form2)
         return render(request, 'TverWashApp/home.html', context={'form1': form1, 'form2': form2})
     def post(self, request, *args, **kwargs):
         form1 = self.form_class1(request.POST)
         #print(form1)
         form2 = self.form_class2(request.POST)
+        print(form2)
         return render(request, 'TverWashApp/home.html', context={'form1': form1, 'form2': form2})
 
 
-class All_Servises(MyFormMixin1, ListView):
+class All_Servises(ListView):
     queryset = Services.objects.all()
     context_object_name = 'services'
     template_name = "TverWashApp/services.html"
@@ -55,7 +57,7 @@ class All_Servises(MyFormMixin1, ListView):
         return render(request, "TverWashApp/services.html", context={})
 
 
-class Gallery(ListView, MyFormMixin1):
+class Gallery(ListView):
     queryset = Gallery.objects.all()
     context_object_name = 'photos'
     template_name = "TverWashApp/gallery.html"
@@ -64,7 +66,7 @@ class Gallery(ListView, MyFormMixin1):
         return render(request, 'TverWashApp/gallery.html', context={})
 
 
-class About_Us(ListView, MyFormMixin1):
+class About_Us(ListView):
     queryset = Team.objects.all()
     context_object_name = 'team'
     template_name = "TverWashApp/about-us.html"
