@@ -48,13 +48,13 @@ class HomePageView(MyFormMixin1, MyFormMixin2, View):
         return render(request, 'TverWashApp/home.html', context={'form1': form1, 'form2': form2})
 
 
-class All_Servises(ListView):
+class All_Servises(MyFormMixin1, MyFormMixin2, ListView):
     queryset = Services.objects.all()
     context_object_name = 'services'
     template_name = "TverWashApp/services.html"
 
     def post(self, request, *args, **kwargs):
-        return render(request, "TverWashApp/services.html", context={})
+        return render(request, "TverWashApp/services.html", context={'form1': form1, 'form2': form2})
 
 
 class Gallery(ListView):
