@@ -28,49 +28,50 @@ template_name - это html страница, которую мы обрабат
 """
 
 
-
 class HomePageView(MyFormMixin1, MyFormMixin2, View):
-
     form_class1 = CallRequestForm
     form_class2 = CallAppointmentForm
 
     def get(self, request, *args, **kwargs):
-        form1 = self.form_class1(request.POST)
-        #print(form1)
-        form2 = self.form_class2(request.POST)
-        print(form2)
-        return render(request, 'TverWashApp/home.html', context={'form1': form1, 'form2': form2})
+        context = {
+            'form1': self.form_class1(request.POST),
+            'form2': self.form_class2(request.POST),
+        }
+        return render(request, 'TverWashApp/home.html', context=context)
+
     def post(self, request, *args, **kwargs):
-        form1 = self.form_class1(request.POST)
-        #print(form1)
-        form2 = self.form_class2(request.POST)
-        print(form2)
-        return render(request, 'TverWashApp/home.html', context={'form1': form1, 'form2': form2})
+        context = {
+            'form1': self.form_class1(request.POST),
+            'form2': self.form_class2(request.POST),
+        }
+        return render(request, 'TverWashApp/home.html', context=context)
 
 
 class All_Servises(MyFormMixin1, MyFormMixin2, ListView):
-
-    #queryset = Services.objects.all()
-    #context_object_name = 'services'
+    queryset = Services.objects.all()
+    context_object_name = 'services'
     template_name = "TverWashApp/services.html"
 
     form_class1 = CallRequestForm
     form_class2 = CallAppointmentForm
 
     def get(self, request, *args, **kwargs):
-        form1 = self.form_class1(request.POST)
-        form2 = self.form_class2(request.POST)
-        return render(request, "TverWashApp/services.html", context={'form1': form1, 'form2': form2})
-    def post(self, request, *args, **kwargs):
-        form1 = self.form_class1(request.POST)
-        form2 = self.form_class2(request.POST)
-        return render(request, "TverWashApp/services.html", context={'form1': form1, 'form2': form2})
+        services = self.queryset
+        context = {
+            'form1': self.form_class1(request.POST),
+            'form2': self.form_class2(request.POST),
+            'services': services,
+        }
+        return render(request, "TverWashApp/services.html", context=context)
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['services'] = Services.objects.all()
-        print(F'request.path == {self.request.path}')
-        return context
+    def post(self, request, *args, **kwargs):
+        services = self.queryset
+        context = {
+            'form1': self.form_class1(request.POST),
+            'form2': self.form_class2(request.POST),
+            'services': services,
+        }
+        return render(request, "TverWashApp/services.html", context=context)
 
 
 class Gallery(ListView):
@@ -78,8 +79,26 @@ class Gallery(ListView):
     context_object_name = 'photos'
     template_name = "TverWashApp/gallery.html"
 
+    form_class1 = CallRequestForm
+    form_class2 = CallAppointmentForm
+
+    def get(self, request, *args, **kwargs):
+        gallery = self.queryset
+        context = {
+            'form1': self.form_class1(request.POST),
+            'form2': self.form_class2(request.POST),
+            'photos': gallery,
+        }
+        return render(request, "TverWashApp/gallery.html", context=context)
+
     def post(self, request, *args, **kwargs):
-        return render(request, 'TverWashApp/gallery.html', context={})
+        gallery = self.queryset
+        context = {
+            'form1': self.form_class1(request.POST),
+            'form2': self.form_class2(request.POST),
+            'photos': gallery,
+        }
+        return render(request, 'TverWashApp/gallery.html', context=context)
 
 
 class About_Us(ListView):
@@ -87,5 +106,23 @@ class About_Us(ListView):
     context_object_name = 'team'
     template_name = "TverWashApp/about-us.html"
 
+    form_class1 = CallRequestForm
+    form_class2 = CallAppointmentForm
+
+    def get(self, request, *args, **kwargs):
+        team = self.queryset
+        context = {
+            'form1': self.form_class1(request.POST),
+            'form2': self.form_class2(request.POST),
+            'team': team,
+        }
+        return render(request, "TverWashApp/about-us.html", context=context)
+
     def post(self, request, *args, **kwargs):
-        return render(request, 'TverWashApp/about-us.html', context={})
+        team = self.queryset
+        context = {
+            'form1': self.form_class1(request.POST),
+            'form2': self.form_class2(request.POST),
+            'team': team,
+        }
+        return render(request, 'TverWashApp/about-us.html', context=context)

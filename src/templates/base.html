@@ -324,6 +324,36 @@
                 </div>
             </div>
         </div>
+    {% if messages %}
+	<script>
+	$(document).ready(function() {
+		$("#messagesModal").modal("show");
+		$("#messagesBtn").click(function() {
+			$("#messagesModal").modal("hide");
+		});
+	});
+	</script>
+	<div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<form class="login100-form">
+						<div class="text-center p-t-30">
+							<span class="txt5">
+								{% for msg in messages %}
+									{{msg.message}}
+								{% endfor %}
+							</span>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="messagesBtn"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
         <!-- Java script-->
         <script src="{% static 'js/core.min.js' %}"></script>
         <script src="{% static 'js/script.js' %}"></script>
@@ -336,6 +366,5 @@
             $("#form2_2").mask("+7 (999) 999-99-99");
         </script>
         <!--------------------------------------------------------------------------------------------------------------------------->
-
     </body>
 </html>

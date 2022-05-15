@@ -32,7 +32,7 @@ class MyFormMixin1(View):
                     messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
                     call_request_form.save()
                     #return HttpResponseRedirect(self.request.path)
-                    return HttpResponseRedirect(F'{self.request.path}#thanks')
+                    return HttpResponseRedirect(F'{self.request.path}')
             else:
                 print("ЧТО-ТО ПОШЛО НЕ ТАК!")
                 messages.error(request, 'НЕПРАВИЛЬНО ВВЕДЁН НОМЕР ТЕЛЕФОНА!')
