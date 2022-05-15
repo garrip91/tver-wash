@@ -2,7 +2,6 @@
 {% load widget_tweaks %}
 
 
-<!DOCTYPE html>
 <html class="wide wow-animation" lang="ru">
     <head>
         <title>{% block title %}{% endblock title %}</title>
@@ -14,9 +13,12 @@
         <!-- Stylesheets-->
         <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+        <!-- JavaScript Bundle with Popper -->
     </head>
     <!--Блок хедера и навбара-->
     <body>
+
         <!-- Page-->
         <div class="page text-center">
             <!-- Page Header-->
@@ -336,20 +338,21 @@
 	<div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
-				<div class="modal-body">
-					<form class="login100-form">
-						<div class="text-center p-t-30">
-							<span class="txt5">
+                    <div class="modal-header text-center">
+                        <button type="button" class="close fa-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="contact" action="" method="POST"> {% csrf_token %}
+                        <div class="modal-body mx-3">
+                            <div class="md-form mb-5">
 								{% for msg in messages %}
 									{{msg.message}}
 								{% endfor %}
-							</span>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="messagesBtn"></button>
-				</div>
+                            </div>
+
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="messagesBtn"></button>
+                        </div>
+                    </form>
 			</div>
 		</div>
 	</div>
