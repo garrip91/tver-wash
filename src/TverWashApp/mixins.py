@@ -26,7 +26,8 @@ class MyFormMixin1(View):
                     send_mail(F'Вам поступил заказ звонка от ***[[ {CallRequestForm_name} ]]*** с абонентским номером << {CallRequestForm_phone} >>', F'[name] {CallRequestForm_name} [/name] с абонентским номером [phone] {CallRequestForm_phone} [/phone] заказал(-а) звонок от Вас!', 'sarkis.bazayan@yandex.ru', ['sarkis.bazayan@yandex.ru'], fail_silently=False)
                     print(send_mail)
                 except:
-                    return HttpResponseNotFound('<h1>Письмо не отправлено</h1>')
+                    messages.error(request, 'Письмо не отправлено')
+                    return HttpResponseRedirect(self.request.path)
                 else:
                     print("ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
                     messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
@@ -65,7 +66,8 @@ class MyFormMixin2(View):
                     send_mail(F'Вам поступила запись на консультацию от ***[[ {CallAppointmentForm_name} ]]*** с абонентским номером << {CallAppointmentForm_phone} >>', F'[name] {CallAppointmentForm_name} [/name] с абонентским номером [phone] {CallAppointmentForm_phone} [/phone], проживающий(-ая) по адресу: [address] {CallAppointmentForm_address} [/address], записался(-ась) к Вам на консультацию, а также оставил(-а) следующее пожелание: [wishes] {CallAppointmentForm_wishes} [/wishes]!', 'sarkis.bazayan@yandex.ru', ['sarkis.bazayan@yandex.ru'], fail_silently=False)
                     print(send_mail)
                 except:
-                    return HttpResponseNotFound('<h1>Письмо не отправлено</h1>')
+                    messages.error(request, 'Письмо не отправлено')
+                    return HttpResponseRedirect(self.request.path)
                 else:
                     print("ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
                     messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
