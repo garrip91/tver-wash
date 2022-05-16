@@ -336,23 +336,22 @@
 	});
 	</script>
 	<div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
-                    <div class="modal-header text-center">
-                        <button type="button" class="close fa-close" data-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form id="contact" action="" method="POST"> {% csrf_token %}
-                        <div class="modal-body mx-3">
-                            <div class="md-form mb-5">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title w-100 font-weight-bold">Уведомление</h5>
+                        <div class="modal-body">
+                            <div class="modal-content py-md-5 px-md-4 p-sm-3 p-4" style="margin-top: 4rem;">
+                                <i class="fa fa-bell"></i>
+                                <span>
 								{% for msg in messages %}
 									{{msg.message}}
 								{% endfor %}
+                            </span>
                             </div>
-
                         <div class="modal-footer d-flex justify-content-center">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="messagesBtn"></button>
+                            <button class="button button-xs button-default-outline" data-dismiss="modal" aria-label="Close" id="messagesBtn">Закрыть</button>
                         </div>
-                    </form>
 			</div>
 		</div>
 	</div>
