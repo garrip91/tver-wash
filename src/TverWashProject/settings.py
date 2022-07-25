@@ -2,7 +2,7 @@ from pathlib import Path
 import os
 
 from . import Yandex_config
-
+from .SECRET_KEY import KEY
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0tt$^-t=&c739%ak=g9&f21)!m(rhr1s8e8p3eopr#sy)dqm+)'
+SECRET_KEY = KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
