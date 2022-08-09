@@ -1,1 +1,0 @@
-KEY = 'django-insecure-0tt$^-t=&c739%ak=g9&f21)!m(rhr1s8e8p3eopr#sy)dqm+)'
